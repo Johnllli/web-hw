@@ -1,39 +1,50 @@
 var indexnum = null;
-var arrayh = new Array();
-function vaildate()
-{
-    isName = true;
-    isAge = true;
-    isSex = true;
-    isVaild = true;
-    if(document.getElementById("name").value == "")
-    {
-        isName = false;
-        document.getElementById("NameValidationError").classList.remove("hide");
+var arrayh = [];
+var dbid = 0;
+//test vil
+function validate() {
+    let isValid = true;
+
+    if (document.getElementById("fullName").value == "") {
+        isValid = false;
+        document.getElementById("fullNameValidationError").classList.remove("hide");
+    } else {
+        document.getElementById("fullNameValidationError").classList.add("hide");
     }
-    if(document.getElementById("age").value == "")
-    {
-        isName = false;
-        document.getElementById("AgeValidationError").classList.remove("hide");
+
+    if (document.getElementById("email").value == "") {
+        isValid = false;
+        document.getElementById("emailValidationError").classList.remove("hide");
+    } else {
+        document.getElementById("emailValidationError").classList.add("hide");
     }
-    if(document.getElementById("sex").value == "")
-    {
-        isName = false;
-        document.getElementById("SexValidationError").classList.remove("hide");
-    }
-    if(!(isName == true && isAge == true && isSex == true))
-    {
-        isVaild = false;
-    }
-    else isVaild = true;
-    return isVaild;
+
+    return isValid;
 }
 function datareader()
 {
     var formdata = {};
-    formdata["Name"] = document.getElementById("name").value;
-    formdata["Age"] = document.getElementById("age").value;
-    formdata["Sex"] = document.getElementById("sex").value;
-    formdata["Gender"] = document.getElementById("gender").value;
+    formdata["name"] = document.getElementById("name").value;
+    formdata["age"] = document.getElementById("age").value;
+    formdata["sex"] = document.getElementById("sex").value;
+    formdata["gender"] = document.getElementById("gender").value; 
     return formdata;
+}
+function onFormSubmit() {
+    if (validate()) {
+        var formData = datareader();
+        if (selectedIndex==null)
+            insertNewRecord(formData);
+        else
+            formData["id"] = ++dbid;
+            updateRecord(formData);
+        resetForm();
+    }
+}
+function updateRecord(formData) {
+    arrayh[selectedIndex].fullName=formData.fullName;
+    arrayh[selectedIndex].email=formData.email;
+    arrayh[selectedIndex].salary=formData.salary;
+    arrayh[selectedIndex].city=formData.city;
+    printArray();
 }

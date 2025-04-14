@@ -36,6 +36,9 @@
                     <li><a href="#">SVG</a></li>    
                 </ul>
             </li>
+            <li><a href="chartjs.html">Chart JS</a></li>
+            <li><a href="">AJAX</a></li>
+            <li><a href="">OOJS</a></li>
         </ul>
     </nav>
     <hr>
@@ -53,11 +56,12 @@
                 <input type="number" min="-10" max="500" name="age" id="age">
             </div>
             <div>
-                <label>Sex*:</label><label class="validation-error hide" id="SexValidationError">This field is required.</label>
+                <label>Sex*:</label>
                 <br>
-                <label>Male XY chromosome  </label><input type="radio" name="sex" value="1">
-                <br>
-                <label>Female XX chromosome  </label><input type="radio" name="sex" value="2">
+                <select name="sex" id="sex">
+                    <option value="1">XX Female</option>
+                    <option value="2">XY Male</option>
+                </select>
             </div>
             <div>
                 <label>Gender</label>
