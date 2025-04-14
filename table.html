@@ -6,13 +6,39 @@
     <title>This is main page</title>
     <link type="text/css" rel="stylesheet" href="style.css">
     <style>
-        label.vaildation-error{
-            color: red;
-            margin-left: 5px;
+        .form{
+            border-style: solid;
+            padding: 10px;
+            width: 50%;
+            margin: auto;
+            font-size: 20px;
         }
-        .hide{
-            display: none;
+        input[type=text], input[type=number], select, input[type=submit]{
+            width: 100%;
+            padding: 8px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 20px;
         }
+        .table{
+            border-style: solid;
+            width: 50%;
+            margin: auto;
+            padding: 10px;
+            
+        }
+        div.table table{
+            width:100%;
+        }
+        td,th{
+            border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
     </style>
 </head>
 <body>
@@ -45,45 +71,49 @@
     <h1><center>This is the table where you can see and change</center></h1>
     <hr>
     <!--name, age, sex, gender-->
-    <div class="table">
-        <form onsubmit="event.preventDefault();tablesubmit();">
+    <div class="form">
+        <form onsubmit="event.preventDefault();onFormSubmit();">
             <div>
-                <label>Name*:</label><label class="validation-error hide" id="NameValidationError">This field is required.</label>
-                <input type="text" name="name" id="name">
+                <label>Name*:</label>
+                <input type="text" id="name" required>
             </div>
             <div>
-                <label>Age*:</label><label class="validation-error hide" id="AgeValidationError">This field is required.</label>
-                <input type="number" min="-10" max="500" name="age" id="age">
+                <label>Age*:</label>
+                <input type="number" min="-10" max="500" id="age" required>
             </div>
             <div>
                 <label>Sex*:</label>
-                <br>
-                <select name="sex" id="sex">
+                <select id="sex">
                     <option value="1">XX Female</option>
                     <option value="2">XY Male</option>
                 </select>
             </div>
             <div>
-                <label>Gender</label>
-                <input type="text" name="gender" id="gender">
+                <label>Gender:</label>
+                <input type="text" id="gender">
             </div>
-            <div class="form-action-buttons">
-                <input type="submit" value="submit">
-            </div>
+            <div  class="form-action-buttons">
+				<input type="submit" value="Submit">
+			</div>
         </form>
+
+        
     </div>
-    <br>
-    <br>
-    <div class="readtable">
-        <table class="list" id="hunman?list">
+    <div class="table">
+        <table border="3" id="datatable">
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Name</th>
                     <th>Age</th>
                     <th>Sex</th>
                     <th>Gender</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
+            <tbody>
+                
+            </tbody>
         </table>
     </div>
     <script src="table.js"></script>
