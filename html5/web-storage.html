@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Storage</title>
-    <link type="text/css" rel="stylesheet" href="style.css">
+    <link type="text/css" rel="stylesheet" href="../style.css">
 </head>
 <body>
     <header>
@@ -14,12 +14,12 @@
     </header>
     <nav class="menu">
         <ul>
-            <li><a href="index.html">Index</a></li>
-            <li><a href="#">Table</a></li>
+            <li><a href="../index.html">Index</a></li>
+            <li><a href="../table.html">Table</a></li>
             <li class="active"><a>HTML5 ▼</a>
                 <ul class="submenu">
                     <li class="active"><a href="web-storage.html">Web Storage</a></li>       
-                    <li><a href="#">Web Workers</a></li>     
+                    <li><a href="web_worker.html">Web Workers</a></li>     
                     <li><a href="#">Server-Sent Events</a></li>
                     <li><a href="#">Geolocation API</a></li>
                     <li><a href="#">Drag and drop API</a></li>
@@ -27,16 +27,22 @@
                     <li><a href="#">SVG</a></li>    
                 </ul>
             </li>
-            <li><a href="chartjs.html">Chart JS</a></li>
+            <li><a href="../chartjs.html">Chart JS</a></li>
             <li><a href="">AJAX</a></li>
             <li><a href="">OOJS</a></li>
         </ul>
     </nav>
-
-
-
-
-
+    <div class="content">
+        <script type="text/javascript">
+            if( localStorage.hits )
+                localStorage.hits = Number(localStorage.hits) +1;
+            else
+                localStorage.hits = 1;
+            document.write("Total Hits :" + localStorage.hits );
+        </script>
+        <p>Refresh the page to increase number of hits.</p>
+        <p>Close the window and open it again and check the result.</p>
+    </div>
     <footer>
         Li Yize EXVVC8
     </footer>

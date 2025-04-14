@@ -57,3 +57,7 @@ nav.menu ul li ul.submenu li.active
 {
     border-top: 8px solid blue;
 } 
+div.content
+{
+    font-size: 30px;
+}
