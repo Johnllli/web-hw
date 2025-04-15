@@ -5,35 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This is main page</title>
     <link type="text/css" rel="stylesheet" href="../style.css">
-    <script>
-        function counting()
-        {
-            if (typeof(Worker) !== "undefined") {
-					var worker = new Worker('../jsses/work.js');
-					worker.onmessage = function (event) {
-						alert("Completed " + event.data + " counting" );
-					};
-			} else {
-				alert("Sorry, your browser does not support Web Workers..." );
-			}
-        }
-    </script>
-    <style>
-        .content{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            margin: 20px;
-            padding: 10px;
-        }
-        input[type=button]
-        {
-            font-size: 60px;
-        }
-        
-    </style>
-</head>
 <body>
     <header>
         <h1>
@@ -47,12 +18,12 @@
             <li class="active"><a>HTML5 ▼</a>
                 <ul class="submenu">
                     <li><a href="web_storage.html">Web Storage</a></li>       
-                    <li class="active"><a href="web_worker.html">Web Workers</a></li>     
+                    <li><a href="web_worker.html">Web Workers</a></li>     
                     <li><a href="ssevent.html">Server-Sent Events</a></li>
                     <li><a href="geolocation.html">Geolocation API</a></li>
                     <li><a href="dragndrop.html">Drag and drop API</a></li>
                     <li><a href="canvas.html">Canvas</a></li>
-                    <li><a href="svg.html">SVG</a></li>    
+                    <li class="active"><a href="svg.html">SVG</a></li>    
                 </ul>
             </li>
             <li><a href="../chartjs.html">Chart JS</a></li>
@@ -61,11 +32,15 @@
         </ul>
     </nav>
     <div class="content">
-        <h2>Click the button below it will start counting</h2>
-       
-
-        <input type="button" onclick="counting()" value="Counthing number from 1,000,000">
+        <h2>This page will show you a stone make with svg</h2>
+        <svg width="300" height="200">
+            <polygon points="100,10 170,35 190,80 180,110 30,110 20, 70" style="fill:gray;stroke:black;stroke-width:5;opacity:0.7;" />
+            <text x="50" y="100" style="font-weight: bold">
+                STONE
+            </text>
+        </svg>
     </div>
+    
     <footer>
         Li Yize EXVVC8
     </footer>
