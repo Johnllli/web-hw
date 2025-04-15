@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This is main page</title>
     <link type="text/css" rel="stylesheet" href="style.css">
+    <style>
+        .video{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +21,7 @@
     </header>
     <nav class="menu">
         <ul>
-            <li class="active"><a href="index.html">Index</a></li>
+            <li><a href="index.html">Index</a></li>
             <li><a href="table.html">Table</a></li>
             <li><a>HTML5 ▼</a>
                 <ul class="submenu">
@@ -28,10 +35,16 @@
                 </ul>
             </li>
             <li><a href="chartjs.html">Chart JS</a></li>
-            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">AJAX</a></li>
+            <li class="active"><a href="ajax.html">AJAX</a></li>
             <li><a href="oojs.html">OOJS</a></li>
         </ul>
     </nav>
+    <div class="video">
+        <video width="1200" height="600" controls>
+            <source src="rick_roll.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
     <footer>
         Li Yize EXVVC8
     </footer>

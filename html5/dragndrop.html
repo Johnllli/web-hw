@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is main page</title>
+    <link type="text/css" rel="stylesheet" href="../style.css">
+    <script>
+        function allowdrop(event){
+            event.preventDefault();
+        }
+        function drag(event){
+            event.dataTransfer.setData("text", event.target.id);
+        }
+        function drop(event){
+            event.preventDefault();
+			var data = event.dataTransfer.getData("text");
+			event.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <style>
+        .mainbox{
+            display: flex;
+            flex-direction: row; /* put boxes in a row */
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        #box1,#box2{
+            width:400px; 
+            height:600px; 
+            margin:10px;
+            padding:10px;
+            border:10px solid red;
+            border-style: dotted;
+        }
+        .content{
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+<body>
+    <header>
+        <h1>
+            THIS IS TITLE
+        </h1>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="../index.html">Index</a></li>
+            <li><a href="../table.html">Table</a></li>
+            <li class="active"><a>HTML5 ▼</a>
+                <ul class="submenu">
+                    <li><a href="web_storage.html">Web Storage</a></li>       
+                    <li><a href="web_worker.html">Web Workers</a></li>     
+                    <li><a href="ssevent.html">Server-Sent Events</a></li>
+                    <li><a href="geolocation.html">Geolocation API</a></li>
+                    <li class="active"><a href="dragndrop.html">Drag and drop API</a></li>
+                    <li><a href="#">Canvas</a></li>
+                    <li><a href="#">SVG</a></li>    
+                </ul>
+            </li>
+            <li><a href="../chartjs.html">Chart JS</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">AJAX</a></li>
+            <li><a href="../oojs.html">OOJS</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div>
+            <h2>You can try to drag and drop this cartoon mouse here</h2>
+        </div>
+        <div class="mainbox">
+        <div id="box1" ondrop="drop(event)" ondragover="allowdrop(event)">
+            <img src="../src/cartoon_mouse.png" draggable="true" ondragstart="drag(event)" id="drag1" width="400" height="600">
+        </div>
+        <div id="box2" ondrop="drop(event)" ondragover="allowdrop(event)"></div>
+        </div>
+    </div>
+
+    <footer>
+        Li Yize EXVVC8
+    </footer>
+</body>
+</html>

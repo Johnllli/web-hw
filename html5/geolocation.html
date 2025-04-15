@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is main page</title>
+    <link type="text/css" rel="stylesheet" href="../style.css">
+    <style>
+        button{
+            font-size: 30px;
+        }
+    </style>
+<body onload="goodfunction()">
+    <header>
+        <h1>
+            THIS IS TITLE
+        </h1>
+    </header>
+    <nav class="menu">
+        <ul>
+            <li><a href="../index.html">Index</a></li>
+            <li><a href="../table.html">Table</a></li>
+            <li class="active"><a>HTML5 ▼</a>
+                <ul class="submenu">
+                    <li><a href="web_storage.html">Web Storage</a></li>       
+                    <li><a href="web_worker.html">Web Workers</a></li>     
+                    <li><a href="ssevent.html">Server-Sent Events</a></li>
+                    <li class="active"><a href="geolocation.html">Geolocation API</a></li>
+                    <li><a href="dragndrop.html">Drag and drop API</a></li>
+                    <li><a href="#">Canvas</a></li>
+                    <li><a href="#">SVG</a></li>    
+                </ul>
+            </li>
+            <li><a href="../chartjs.html">Chart JS</a></li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">AJAX</a></li>
+            <li><a href="../oojs.html">OOJS</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <p>Click the button to get your coordinates.</p>
+        <button onclick="where()">Try It</button>
+        <p id="demo"></p>
+        <script>	
+            var x = document.getElementById("demo");
+            function where()  {
+                if (navigator.geolocation)
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                else 
+                    x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+            function showPosition(position)  {
+                x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;	
+                var newContent = '<iframe src = "https://maps.google.com/maps?q=' + position.coords.latitude + ',' + position.coords.longitude + '&hl=es;z=14&amp;output=embed" width="600" height="450"></iframe>';
+                var contentHolder = document.getElementById('content-holder');
+                contentHolder.innerHTML = newContent;
+            }
+        </script>
+        <p id="content-holder">Google maps: Waiting for GPS coordinates ...</p>
+    
+    </div>
+    <footer>
+        Li Yize EXVVC8
+    </footer>
+</body>
+</html>
