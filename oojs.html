@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>This is main page</title>
     <link type="text/css" rel="stylesheet" href="style.css">
+    <style>
+        div.table {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        }
+        .content h2{
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -14,7 +24,7 @@
     </header>
     <nav class="menu">
         <ul>
-            <li class="active"><a href="index.html">Index</a></li>
+            <li><a href="index.html">Index</a></li>
             <li><a href="table.html">Table</a></li>
             <li><a>HTML5 ▼</a>
                 <ul class="submenu">
@@ -29,9 +39,29 @@
             </li>
             <li><a href="chartjs.html">Chart JS</a></li>
             <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">AJAX</a></li>
-            <li><a href="oojs.html">OOJS</a></li>
+            <li class="active"><a href="oojs.html">OOJS</a></li>
         </ul>
     </nav>
+    <div class="content">
+        <h2>THIS PAGE IS DONE BY OOJS</h2>
+    </div>
+    <div class="content">
+        <div class="table">
+            <table border="3" id="tmountain">
+                <thead>
+                    <tr>
+                        <th>Height(KM!!!)</th>
+                        <th>Mountain</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="jsses/oojs.js"></script>
     <footer>
         Li Yize EXVVC8
     </footer>
