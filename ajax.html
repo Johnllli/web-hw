@@ -6,10 +6,8 @@
     <title>This is main page</title>
     <link type="text/css" rel="stylesheet" href="style.css">
     <style>
-        .video{
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        button{
+            font-size: 30px;
         }
     </style>
 </head>
@@ -39,12 +37,13 @@
             <li><a href="oojs.html">OOJS</a></li>
         </ul>
     </nav>
-    <div class="video">
-        <video width="1200" height="600" controls>
-            <source src="rick_roll.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+    <div class="content">
+        <h1>Simple AJAX</h1>
+        <div class="textshow">Text will change if you click buttton</div>
+        <button onclick="changedate()">Chang text</button>
+        
     </div>
+    <script src="jsses/ajax.js"></script>
     <footer>
         Li Yize EXVVC8
     </footer>
