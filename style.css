@@ -62,3 +62,8 @@ div.content
     font-size: 30px;
     justify-items: center;
 }
+aside
+{
+    max-width: 300px;
+    background-color: #999999;
+}

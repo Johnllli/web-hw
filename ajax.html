@@ -1,50 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>This is main page</title>
-    <link type="text/css" rel="stylesheet" href="style.css">
-    <style>
-        button{
-            font-size: 30px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AJAX</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="jsses/ajax.js" defer></script>
+  <style>
+    .table{
+      border-style:double;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>
-            THIS IS TITLE
-        </h1>
-    </header>
-    <nav class="menu">
-        <ul>
-            <li><a href="index.html">Index</a></li>
-            <li><a href="table.html">Table</a></li>
-            <li><a>HTML5 ▼</a>
-                <ul class="submenu">
-                    <li><a href="html5/web_storage.html">Web Storage</a></li>       
-                    <li><a href="html5/web_worker.html">Web Workers</a></li>     
-                    <li><a href="html5/ssevent.html">Server-Sent Events</a></li>
-                    <li><a href="html5/geolocation.html">Geolocation API</a></li>
-                    <li><a href="html5/dragndrop.html">Drag and drop API</a></li>
-                    <li><a href="html5/canvas.html">Canvas</a></li>
-                    <li><a href="html5/svg.html">SVG</a></li>    
-                </ul>
-            </li>
-            <li><a href="chartjs.html">Chart JS</a></li>
-            <li class="active"><a href="ajax.html">AJAX</a></li>
-            <li><a href="oojs.html">OOJS</a></li>
-        </ul>
-    </nav>
-    <div class="content">
-        <h1>Simple AJAX</h1>  
-        <div id="textshow">Text will change if you click buttton</div>
-        <button onclick="changedate()">Chang text</button>
+
+  <header>
+    <h1>
+      Web-programming-1 Lecture Homework
+    </h1>
+  </header>
+
+  <nav class="menu">
+    <ul>
+        <li><a href="../index.html">Index</a></li>
+        <li><a href="../table.html">Table</a></li>
+        <li><a>HTML5 ▼</a>
+            <ul class="submenu">
+                <li><a href="web_storage.html">Web Storage</a></li>       
+                <li><a href="web_worker.html">Web Workers</a></li>     
+                <li><a href="ssevent.html">Server-Sent Events</a></li>
+                <li><a href="geolocation.html">Geolocation API</a></li>
+                <li><a href="dragndrop.html">Drag and drop API</a></li>
+                <li><a href="canvas.html">Canvas</a></li>
+                <li><a href="svg.html">SVG</a></li>    
+            </ul>
+        </li>
+        <li><a href="../chartjs.html">Chart JS</a></li>
+        <li class="active"><a href="../ajax.html">AJAX</a></li>
+        <li><a href="../oojs.html">OOJS</a></li>
+    </ul>
+  </nav>
+  <aside>
+    <p>AJAX: This page not really work</p>
+  </aside>
+  <!--FIXXXXXX-->
+  
+  
+    <div id="content">
+
+      <!-- READ -->
+      <section>
+        <h2>Read</h2>
+        <div id="code"></div>
+        <div id="readDiv"></div>
+      </section>
+
+      <!-- CREATE -->
+      <section>
+        <h2>Create</h2>
+        <input id="name1" placeholder="Name" maxlength="30" />
+        <input id="age1" placeholder="age" maxlength="30" />
+        <input id="favfruit1" placeholder="favfruit" maxlength="30" />
+        <button onclick="create()">Create</button>
+        <div id="createResult"></div>
+      </section>
+
+      <!-- UPDATE -->
+      <section>
+        <h2>Update</h2>
+        <input id="idUpd" placeholder="ID to update" />
+        <button onclick="getDataForId()">Get Data For ID</button><br>
+        <input id="name2" placeholder="Name" maxlength="30" />
+        <input id="age2" placeholder="age" maxlength="30" />
+        <input id="favfruit2" placeholder="favfruit" maxlength="30" />
+        <button onclick="update()">Update</button>
+        <div id="updateResult"></div>
+      </section>
+
+      <!-- DELETE -->
+      <section>
+        <h2>Delete</h2>
+        <input id="idDel" placeholder="ID to delete" />
+        <button onclick="deleteF()">Delete</button>
+        <div id="deleteResult"></div>
+      </section>
+
     </div>
-    <script src="jsses/ajax.js"></script>
-    <footer>
-        Li Yize EXVVC8
-    </footer>
+  
+
+  <footer>
+    <p>Li Yize EXVVC8</p>
+  </footer>
+
 </body>
 </html>
