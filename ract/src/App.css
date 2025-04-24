@@ -1,6 +1,16 @@
-div showapp
-{
-  display: flex;
-  text-align: center;
-  align-items: center;
+button a{
+  text-decoration: none;
+  color: black;
+}
+div.main{
+  margin: 25px;
+}
+nav.menu{
+  margin: 10px;
+}
+div.apparea{
+  margin: 20px
+}
+button{
+  margin: 3px;
 }
