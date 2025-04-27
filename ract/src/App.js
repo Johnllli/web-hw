@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="main">
-      <button><a href="https://github.com/dashboard">Return to index page</a></button>
+      <button><a href="http://www.johnlechw.nhely.hu/johnlechw.nhely.hu/">Return to index page</a></button>
       <h2>Chose a app you want</h2>
       <nav className="menu">
         <button onClick={() => setActiveApp('counter')}>Counter App</button>
